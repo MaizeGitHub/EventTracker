@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSObject+ETRTracker.h"
 
 @interface ETRTableViewTracker : NSObject
+
+@property (nonatomic, copy) ETR_viewTrackEventHandler viewHandler;
+@property (nonatomic, copy) ETR_clickTrackEventHandler clickHandler;
 
 + (ETRTableViewTracker *)startTrackWithHostTableView:(UITableView *)tableView;
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E0B9FF371EE26F1100DF5871 /* ETRTableViewFakeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9FF361EE26F1100DF5871 /* ETRTableViewFakeDelegate.m */; };
+		E0B9FF3A1EE2ED1400DF5871 /* NSObject+ETRTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9FF391EE2ED1400DF5871 /* NSObject+ETRTracker.m */; };
 		E0C92F381EE076BF004D7280 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C92F371EE076BF004D7280 /* main.m */; };
 		E0C92F3B1EE076BF004D7280 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C92F3A1EE076BF004D7280 /* AppDelegate.m */; };
 		E0C92F3E1EE076BF004D7280 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C92F3D1EE076BF004D7280 /* ViewController.m */; };
@@ -22,6 +23,8 @@
 /* Begin PBXFileReference section */
 		E0B9FF351EE26F1100DF5871 /* ETRTableViewFakeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRTableViewFakeDelegate.h; sourceTree = SOURCE_ROOT; };
 		E0B9FF361EE26F1100DF5871 /* ETRTableViewFakeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRTableViewFakeDelegate.m; sourceTree = SOURCE_ROOT; };
+		E0B9FF381EE2ED1400DF5871 /* NSObject+ETRTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ETRTracker.h"; sourceTree = SOURCE_ROOT; };
+		E0B9FF391EE2ED1400DF5871 /* NSObject+ETRTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ETRTracker.m"; sourceTree = SOURCE_ROOT; };
 		E0C92F331EE076BF004D7280 /* EventTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C92F371EE076BF004D7280 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C92F391EE076BF004D7280 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				E0C92F581EE082EB004D7280 /* UITableView+ETRTracker.m */,
 				E0B9FF351EE26F1100DF5871 /* ETRTableViewFakeDelegate.h */,
 				E0B9FF361EE26F1100DF5871 /* ETRTableViewFakeDelegate.m */,
+				E0B9FF381EE2ED1400DF5871 /* NSObject+ETRTracker.h */,
+				E0B9FF391EE2ED1400DF5871 /* NSObject+ETRTracker.m */,
 			);
 			name = EventTracker;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			files = (
 				E0C92F591EE082EB004D7280 /* UITableView+ETRTracker.m in Sources */,
 				E0C92F4F1EE07957004D7280 /* DemoTableViewController.m in Sources */,
+				E0B9FF3A1EE2ED1400DF5871 /* NSObject+ETRTracker.m in Sources */,
 				E0C92F3E1EE076BF004D7280 /* ViewController.m in Sources */,
 				E0B9FF371EE26F1100DF5871 /* ETRTableViewFakeDelegate.m in Sources */,
 				E0C92F3B1EE076BF004D7280 /* AppDelegate.m in Sources */,

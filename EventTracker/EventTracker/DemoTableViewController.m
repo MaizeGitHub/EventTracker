@@ -21,7 +21,10 @@
     [super viewDidLoad];
     
     self.cellHeightArray = @[@40, @80, @40, @100, @70, @100, @90, @90, @120, @40, @80, @40, @100, @70, @100, @90, @90, @120];
-    [ETRTableViewTracker startTrackWithHostTableView:self.tableView];
+    ETRTableViewTracker *traker = [ETRTableViewTracker startTrackWithHostTableView:self.tableView];
+    traker.clickHandler = ^(NSIndexPath *indexPath) {
+        NSLog(@"TrackEvent=====%@", indexPath);
+    };
 }
 
 - (void)didReceiveMemoryWarning {
