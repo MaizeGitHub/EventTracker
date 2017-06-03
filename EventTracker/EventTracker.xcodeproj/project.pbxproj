@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E0B9FF341EE265F500DF5871 /* ETRFakeTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9FF331EE265F500DF5871 /* ETRFakeTableViewDelegate.m */; };
+		E0B9FF371EE26F1100DF5871 /* ETRTableViewFakeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9FF361EE26F1100DF5871 /* ETRTableViewFakeDelegate.m */; };
 		E0C92F381EE076BF004D7280 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C92F371EE076BF004D7280 /* main.m */; };
 		E0C92F3B1EE076BF004D7280 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C92F3A1EE076BF004D7280 /* AppDelegate.m */; };
 		E0C92F3E1EE076BF004D7280 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C92F3D1EE076BF004D7280 /* ViewController.m */; };
@@ -20,14 +20,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E0B9FF321EE265F500DF5871 /* ETRFakeTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRFakeTableViewDelegate.h; sourceTree = SOURCE_ROOT; };
-		E0B9FF331EE265F500DF5871 /* ETRFakeTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRFakeTableViewDelegate.m; sourceTree = SOURCE_ROOT; };
+		E0B9FF351EE26F1100DF5871 /* ETRTableViewFakeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRTableViewFakeDelegate.h; sourceTree = SOURCE_ROOT; };
+		E0B9FF361EE26F1100DF5871 /* ETRTableViewFakeDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETRTableViewFakeDelegate.m; sourceTree = SOURCE_ROOT; };
 		E0C92F331EE076BF004D7280 /* EventTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C92F371EE076BF004D7280 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0C92F391EE076BF004D7280 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0C92F3A1EE076BF004D7280 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E0C92F3C1EE076BF004D7280 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E0C92F3D1EE076BF004D7280 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E0C92F3D1EE076BF004D7280 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = EventTracker/ViewController.m; sourceTree = "<group>"; };
 		E0C92F401EE076BF004D7280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0C92F421EE076BF004D7280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0C92F451EE076BF004D7280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +56,7 @@
 			children = (
 				E0C92F351EE076BF004D7280 /* EventTracker */,
 				E0C92F341EE076BF004D7280 /* Products */,
+				E0C92F3D1EE076BF004D7280 /* ViewController.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,7 +75,6 @@
 				E0C92F391EE076BF004D7280 /* AppDelegate.h */,
 				E0C92F3A1EE076BF004D7280 /* AppDelegate.m */,
 				E0C92F3C1EE076BF004D7280 /* ViewController.h */,
-				E0C92F3D1EE076BF004D7280 /* ViewController.m */,
 				E0C92F3F1EE076BF004D7280 /* Main.storyboard */,
 				E0C92F421EE076BF004D7280 /* Assets.xcassets */,
 				E0C92F441EE076BF004D7280 /* LaunchScreen.storyboard */,
@@ -101,8 +101,8 @@
 				E0C92F521EE07BB4004D7280 /* ETRTableViewTracker.m */,
 				E0C92F571EE082EB004D7280 /* UITableView+ETRTracker.h */,
 				E0C92F581EE082EB004D7280 /* UITableView+ETRTracker.m */,
-				E0B9FF321EE265F500DF5871 /* ETRFakeTableViewDelegate.h */,
-				E0B9FF331EE265F500DF5871 /* ETRFakeTableViewDelegate.m */,
+				E0B9FF351EE26F1100DF5871 /* ETRTableViewFakeDelegate.h */,
+				E0B9FF361EE26F1100DF5871 /* ETRTableViewFakeDelegate.m */,
 			);
 			name = EventTracker;
 			sourceTree = "<group>";
@@ -182,9 +182,9 @@
 				E0C92F591EE082EB004D7280 /* UITableView+ETRTracker.m in Sources */,
 				E0C92F4F1EE07957004D7280 /* DemoTableViewController.m in Sources */,
 				E0C92F3E1EE076BF004D7280 /* ViewController.m in Sources */,
+				E0B9FF371EE26F1100DF5871 /* ETRTableViewFakeDelegate.m in Sources */,
 				E0C92F3B1EE076BF004D7280 /* AppDelegate.m in Sources */,
 				E0C92F381EE076BF004D7280 /* main.m in Sources */,
-				E0B9FF341EE265F500DF5871 /* ETRFakeTableViewDelegate.m in Sources */,
 				E0C92F531EE07BB4004D7280 /* ETRTableViewTracker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

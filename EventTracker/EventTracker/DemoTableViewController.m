@@ -22,13 +22,7 @@
     
     self.cellHeightArray = @[@40, @80, @40, @100, @70, @100, @90, @90, @120, @40, @80, @40, @100, @70, @100, @90, @90, @120];
     [ETRTableViewTracker startTrackWithHostTableView:self.tableView];
-    self.tableView.delegate = [NSObject new];
-    [self test];
-}
-
-- (void)test
-{
-    NSLog(@"test");
+    [self class];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +51,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [self.cellHeightArray[indexPath.row] floatValue];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"original didSelectRowAtIndexPath");
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"original willDisplayCell");
 }
 
 @end

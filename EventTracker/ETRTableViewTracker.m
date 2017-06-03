@@ -7,15 +7,13 @@
 //
 
 #import "ETRTableViewTracker.h"
-#import "ETRFakeTableViewDelegate.h"
+#import "ETRTableViewFakeDelegate.h"
 #import "UITableView+ETRTracker.h"
 #import <objc/runtime.h>
 
-static ETRTableViewTracker *tableViewTracker;
+static NSString *kETRTableViewFakeDelegatePrefix = @"etr_tableViewFakeDelegate";
 
 @interface ETRTableViewTracker ()
-
-@property (nonatomic, strong) ETRFakeTableViewDelegate *fakeDelegate;
 
 @end
 
@@ -26,31 +24,49 @@ static ETRTableViewTracker *tableViewTracker;
     ETRTableViewTracker *tracker = [[ETRTableViewTracker alloc] init];
     tableView.etr_tracker = tracker;
     
-    if (tableView.delegate) {
-        object_setClass(tableView.delegate, [ETRFakeTableViewDelegate class]);
+    if (tableView.delegate
+        && ![NSStringFromClass([tableView.delegate class]) hasPrefix:kETRTableViewFakeDelegatePrefix]) {
+        Class fakeDelegateClass = [self getTableViewFakeDelegateClass:[tableView.delegate class]];
+        object_setClass(tableView.delegate, fakeDelegateClass);
     }
     [tableView addObserver:tracker forKeyPath:@"delegate" options:NSKeyValueObservingOptionNew context:nil];
     
     return tracker;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
++ (Class)getTableViewFakeDelegateClass:(Class)originalClass
 {
-    if ([keyPath isEqualToString:@"delegate"]) {
-        id delegate = change[NSKeyValueChangeNewKey];
-        object_setClass(delegate, [ETRFakeTableViewDelegate class]);
+    NSString *fakeDelegateName = [kETRTableViewFakeDelegatePrefix stringByAppendingString:NSStringFromClass([originalClass class])];
+    Class fakeDelegateClass = NSClassFromString(fakeDelegateName);
+    
+    if (!fakeDelegateClass) {
+        fakeDelegateClass = objc_allocateClassPair(originalClass, fakeDelegateName.UTF8String, 0);
+        
+        Method classMethod = class_getInstanceMethod([ETRTableViewFakeDelegate class], @selector(class));
+        class_addMethod(fakeDelegateClass, method_getName(classMethod), method_getImplementation(classMethod), method_getTypeEncoding(classMethod));
+        
+        classMethod = class_getInstanceMethod([ETRTableViewFakeDelegate class], @selector(tableView:didSelectRowAtIndexPath:));
+        class_addMethod(fakeDelegateClass, method_getName(classMethod), method_getImplementation(classMethod), method_getTypeEncoding(classMethod));
+        
+        classMethod = class_getInstanceMethod([ETRTableViewFakeDelegate class], @selector(tableView:willDisplayCell:forRowAtIndexPath:));
+        class_addMethod(fakeDelegateClass, method_getName(classMethod), method_getImplementation(classMethod), method_getTypeEncoding(classMethod));
+        
+        objc_registerClassPair(fakeDelegateClass);
     }
+    
+    return fakeDelegateClass;
 }
 
-- (instancetype)init
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    self = [super init];
-    
-    if (self) {
-        _fakeDelegate = [[ETRFakeTableViewDelegate alloc] init];
+    if ([object isKindOfClass:[UITableView class]]
+        && [keyPath isEqualToString:@"delegate"]) {
+        id<UITableViewDelegate> delegate = change[NSKeyValueChangeNewKey];
+        if (![NSStringFromClass([delegate class]) hasPrefix:kETRTableViewFakeDelegatePrefix]) {
+            Class fakeDelegateClass = [ETRTableViewTracker getTableViewFakeDelegateClass:[delegate class]];
+            object_setClass(delegate, fakeDelegateClass);
+        }
     }
-    
-    return self;
 }
 
 @end

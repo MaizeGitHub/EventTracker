@@ -1,13 +1,13 @@
 //
-//  ETRFakeTableViewDelegate.m
+//  ETRTableViewFakeDelegate.h
 //  EventTracker
 //
 //  Created by Maize on 2017/6/3.
 //  Copyright © 2017年 maize.com. All rights reserved.
 //
 
-#import "ETRFakeTableViewDelegate.h"
+#import <UIKit/UIKit.h>
 
-@implementation ETRFakeTableViewDelegate
+@interface ETRTableViewFakeDelegate : NSObject <UITableViewDelegate>
 
 @end
