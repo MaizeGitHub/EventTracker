@@ -11,10 +11,10 @@
 
 @implementation ETRTableViewFakeDelegate
 
-//- (Class)class
-//{
-//    return class_getSuperclass(object_getClass(self));
-//}
+- (Class)class
+{
+    return class_getSuperclass(object_getClass(self));
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

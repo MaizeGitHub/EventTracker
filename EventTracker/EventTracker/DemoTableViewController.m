@@ -22,7 +22,6 @@
     
     self.cellHeightArray = @[@40, @80, @40, @100, @70, @100, @90, @90, @120, @40, @80, @40, @100, @70, @100, @90, @90, @120];
     [ETRTableViewTracker startTrackWithHostTableView:self.tableView];
-    [self class];
 }
 
 - (void)didReceiveMemoryWarning {

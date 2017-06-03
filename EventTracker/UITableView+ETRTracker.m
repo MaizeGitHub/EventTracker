@@ -7,9 +7,27 @@
 //
 
 #import "UITableView+ETRTracker.h"
+#import "ETRTableViewTracker.h"
+
 #import <objc/runtime.h>
 
 @implementation UITableView (ETRTracker)
+
++ (void)load
+{
+    Method originalMethod = class_getInstanceMethod(self, sel_registerName("dealloc"));
+    Method newMethod = class_getInstanceMethod(self, @selector(etr_dealloc));
+    method_exchangeImplementations(originalMethod, newMethod);
+}
+
+- (void)etr_dealloc
+{
+    if (self.etr_tracker) {
+        [self removeObserver:self.etr_tracker forKeyPath:@"delegate"];
+    }
+    
+    [self etr_dealloc];
+}
 
 - (void)setEtr_tracker:(ETRTableViewTracker *)etr_tracker
 {

@@ -27,7 +27,7 @@
 		E0C92F391EE076BF004D7280 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0C92F3A1EE076BF004D7280 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E0C92F3C1EE076BF004D7280 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E0C92F3D1EE076BF004D7280 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = EventTracker/ViewController.m; sourceTree = "<group>"; };
+		E0C92F3D1EE076BF004D7280 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E0C92F401EE076BF004D7280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0C92F421EE076BF004D7280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0C92F451EE076BF004D7280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,7 +56,6 @@
 			children = (
 				E0C92F351EE076BF004D7280 /* EventTracker */,
 				E0C92F341EE076BF004D7280 /* Products */,
-				E0C92F3D1EE076BF004D7280 /* ViewController.m */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +74,7 @@
 				E0C92F391EE076BF004D7280 /* AppDelegate.h */,
 				E0C92F3A1EE076BF004D7280 /* AppDelegate.m */,
 				E0C92F3C1EE076BF004D7280 /* ViewController.h */,
+				E0C92F3D1EE076BF004D7280 /* ViewController.m */,
 				E0C92F3F1EE076BF004D7280 /* Main.storyboard */,
 				E0C92F421EE076BF004D7280 /* Assets.xcassets */,
 				E0C92F441EE076BF004D7280 /* LaunchScreen.storyboard */,

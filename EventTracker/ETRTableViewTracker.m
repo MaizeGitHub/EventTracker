@@ -15,6 +15,8 @@ static NSString *kETRTableViewFakeDelegatePrefix = @"etr_tableViewFakeDelegate";
 
 @interface ETRTableViewTracker ()
 
+@property (nonatomic, weak) UITableView *tableView;
+
 @end
 
 @implementation ETRTableViewTracker
@@ -22,6 +24,7 @@ static NSString *kETRTableViewFakeDelegatePrefix = @"etr_tableViewFakeDelegate";
 + (ETRTableViewTracker *)startTrackWithHostTableView:(UITableView *)tableView
 {
     ETRTableViewTracker *tracker = [[ETRTableViewTracker alloc] init];
+    tracker.tableView = tableView;
     tableView.etr_tracker = tracker;
     
     if (tableView.delegate
@@ -62,7 +65,8 @@ static NSString *kETRTableViewFakeDelegatePrefix = @"etr_tableViewFakeDelegate";
     if ([object isKindOfClass:[UITableView class]]
         && [keyPath isEqualToString:@"delegate"]) {
         id<UITableViewDelegate> delegate = change[NSKeyValueChangeNewKey];
-        if (![NSStringFromClass([delegate class]) hasPrefix:kETRTableViewFakeDelegatePrefix]) {
+        if (![delegate isKindOfClass:[NSNull class]]
+            && ![NSStringFromClass([delegate class]) hasPrefix:kETRTableViewFakeDelegatePrefix]) {
             Class fakeDelegateClass = [ETRTableViewTracker getTableViewFakeDelegateClass:[delegate class]];
             object_setClass(delegate, fakeDelegateClass);
         }
