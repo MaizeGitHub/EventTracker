@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+
+project 'EventTracker.xcodeproj'
+
+target "EventTracker" do
+  pod 'EventTracker', :path => '../EventTracker.podspec'
+end

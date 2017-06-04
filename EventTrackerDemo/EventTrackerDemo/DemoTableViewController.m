@@ -20,11 +20,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.cellHeightArray = @[@40, @80, @40, @100, @70, @100, @90, @90, @120, @40, @80, @40, @100, @70, @100, @90, @90, @120];
-    ETRTableViewTracker *traker = [ETRTableViewTracker startTrackWithHostTableView:self.tableView];
-    traker.clickHandler = ^(NSIndexPath *indexPath) {
-        NSLog(@"TrackEvent=====%@", indexPath);
-    };
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.cellHeightArray = @[@40, @50, @60, @70, @80, @90, @100, @110, @120, @115, @105, @95, @85, @75, @65, @55, @45, @35];
+    
+    ETRTableViewClickEventTracker(self.tableView, ^(NSIndexPath *indexPath) {
+        // 点击埋点代码
+        NSLog(@"TrackClickEvent=====%@", indexPath);
+    });
+    
+    __weak typeof(self) weakSelf = self;
+    ETRTableViewViewEventTracker(self.tableView, 0.5, 0.7, ^(UITableViewCell *cell, NSIndexPath *indexPath, ETR_viewMarkChecker checker) {
+        if (checker(weakSelf.cellHeightArray[indexPath.row])) {
+            // 曝光埋点代码
+            NSLog(@"TrackViewEvent=====%@", indexPath);
+        }
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,7 +72,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"original willDisplayCell");
+    
 }
 
 @end

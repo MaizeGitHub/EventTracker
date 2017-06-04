@@ -1,0 +1,16 @@
+PODS:
+  - EventTracker (0.0.1)
+
+DEPENDENCIES:
+  - EventTracker (from `../EventTracker.podspec`)
+
+EXTERNAL SOURCES:
+  EventTracker:
+    :path: "../EventTracker.podspec"
+
+SPEC CHECKSUMS:
+  EventTracker: c08a2996e5ca35846d013f93fc9c3ddd58179857
+
+PODFILE CHECKSUM: fda4042d36316c1030dd9948ee1bdacb68f934ce
+
+COCOAPODS: 1.2.0

@@ -24,6 +24,7 @@
 {
     if (self.etr_tracker) {
         [self removeObserver:self.etr_tracker forKeyPath:@"delegate"];
+        [self removeObserver:self.etr_tracker forKeyPath:@"contentOffset"];
     }
     
     [self etr_dealloc];

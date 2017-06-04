@@ -22,16 +22,6 @@
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-- (void)setEtr_viewTrackEventHandler:(ETR_viewTrackEventHandler)etr_viewTrackEventHandler
-{
-    objc_setAssociatedObject(self, @selector(etr_viewTrackEventHandler), etr_viewTrackEventHandler, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (ETR_viewTrackEventHandler)etr_viewTrackEventHandler
-{
-    return objc_getAssociatedObject(self, _cmd);
-}
-
 - (void)setEtr_clickTrackEventHandler:(ETR_clickTrackEventHandler)etr_clickTrackEventHandler
 {
     objc_setAssociatedObject(self, @selector(etr_clickTrackEventHandler), etr_clickTrackEventHandler, OBJC_ASSOCIATION_COPY_NONATOMIC);

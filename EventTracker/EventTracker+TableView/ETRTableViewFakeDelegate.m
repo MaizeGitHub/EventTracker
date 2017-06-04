@@ -50,9 +50,4 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"fake willDisplayCell");
-}
-
 @end
